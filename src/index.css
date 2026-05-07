@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Hind", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Tiro Devanagari Hindi", serif;
+  --font-urdu: "Noto Nastaliq Urdu", serif;
+}
+
+body {
+  @apply bg-[#FDFCF8] text-[#1A1A1A] antialiased overflow-x-hidden relative;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+}
+
+.editorial-card {
+  @apply bg-white/60 backdrop-blur-md border border-[#1A1A1A]/5 shadow-sm transition-all duration-500;
+}
+
+.editorial-card:hover {
+  @apply border-[#8B0000]/20 shadow-xl shadow-black/5 -translate-y-1;
+}
+
+.crimson-badge {
+  @apply bg-[#8B0000]/5 text-[#8B0000] text-[10px] uppercase tracking-[0.3em] font-sans font-bold px-4 py-2 rounded-full border border-[#8B0000]/10 inline-block;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-[#1A1A1A]/5 rounded-full hover:bg-[#1A1A1A]/10 transition-colors;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-[#1A1A1A]/10 rounded-full;
+}
+
+@keyframes slow-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-slow-float {
+  animation: slow-float 6s ease-in-out infinite;
+}
+
